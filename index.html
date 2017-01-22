@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FileTree</title>
+    <link rel="icon" type="image/x-icon"
+          href="https://raw.githubusercontent.com/xiaoxiaoying/xiaoxiaoying.github.com/master/assets/img/xiaoxiaoying.ico">
+    <script type="text/javascript" src="js/Log.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="js/FileTree.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/service.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="pt-page" id="file-list">
+
+    <div style="height: 100%;margin-top: 10%;" >
+        <div class="left-list">
+
+        </div>
+        <div class="right-list">
+            <div class="right-head">
+                <p style="width: 60%;">文件名</p>
+                <p>文件大小</p>
+                <p>最后修改时间</p>
+            </div>
+            <div class="right-content" v-for="(value,index) in data">
+                <p style="width: 60%;">{{value.name}}</p>
+                <p>{{value.size | formatSize}}</p>
+                <p>{{value.time | formatTime}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
